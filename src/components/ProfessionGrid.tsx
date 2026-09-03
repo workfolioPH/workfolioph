@@ -17,7 +17,7 @@ const PROFESSIONS = [
     title: 'Engineering & Construction',
     subtitle: 'Civil, Mechanical, Electrical Engineers, Architects, QA/QC',
     icon: HardHat,
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=400&q=80',
+    image: '/images/engineering-construction.jpg',
     details: 'Showcase project blueprints, site inspection photos, AutoCAD designs, and safety compliance certificates.'
   },
   {
