@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, ArrowRight, Play, FileText, QrCode, Globe, Star, Sparkles, Video, Image, ChevronRight } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowRight, Play, FileText, QrCode, Star, Sparkles, Video, Image, ChevronRight } from 'lucide-react';
 
 interface HeroProps {
   onOpenInquiry: (pkg?: string) => void;
@@ -208,11 +208,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
 
               </div>
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-3 -right-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-slate-950 px-3.5 py-1.5 rounded-full font-bold text-xs shadow-xl flex items-center gap-1.5">
-                <Globe className="w-3.5 h-3.5" />
-                <span>Live Portfolio Link</span>
-              </div>
 
             </div>
 
