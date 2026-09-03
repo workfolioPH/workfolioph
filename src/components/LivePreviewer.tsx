@@ -73,14 +73,14 @@ export const LivePreviewer: React.FC<LivePreviewerProps> = ({ onOpenInquiry }) =
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 text-xs font-semibold">
-            <span>INTERACTIVE DEMO PREVIEW</span>
+            <span>SAMPLE PORTFOLIO DEMONSTRATIONS</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
             See what your portfolio could look like.
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Switch professions and devices to experience how employers view your credentials on phone and laptop.
-          </p>
+        <p className="text-gray-400 text-sm sm:text-base">
+          These fictional demonstration profiles show how employers could view your credentials on phone and laptop.
+        </p>
         </div>
 
         {/* Profession Selector Tabs */}
@@ -207,7 +207,7 @@ export const LivePreviewer: React.FC<LivePreviewerProps> = ({ onOpenInquiry }) =
                 <div className="p-4 rounded-xl bg-slate-900/90 border border-emerald-900/40 space-y-3">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-semibold text-emerald-400 uppercase tracking-wider flex items-center gap-1">
-                      <ImageIcon className="w-3.5 h-3.5" /> Verified Work Evidence
+                      <ImageIcon className="w-3.5 h-3.5" /> Sample Work Evidence
                     </span>
                     <span className="text-gray-400 text-[11px]">{currentSample.mediaCount}</span>
                   </div>

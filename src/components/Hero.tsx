@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                 ))}
-                <span className="text-gray-300 ml-1 font-normal">4.9/5 Client Rating</span>
+                <span className="text-gray-300 ml-1 font-normal">Sample layout preview</span>
               </div>
               <div className="flex items-center gap-1.5 text-gray-300">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
