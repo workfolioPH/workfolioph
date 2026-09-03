@@ -30,8 +30,21 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === 'GET') {
-      if (!(await requireAdmin(req, res))) return;
       const { ref, status } = req.query || {};
+
+      // Customers may look up their own status with the reference code.
+      // Only return the fields needed by the public tracker.
+      if (ref) {
+        const { data, error } = await supabase
+          .from('inquiries')
+          .select('ref_code, full_name, profession, package_name, total_price, status')
+          .eq('ref_code', String(ref).trim().toUpperCase())
+          .limit(1);
+        if (error) throw error;
+        return res.status(200).json(data || []);
+      }
+
+      if (!(await requireAdmin(req, res))) return;
       
       let query = supabase.from('inquiries').select('*').order('created_at', { ascending: false });
       
