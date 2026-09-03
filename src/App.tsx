@@ -17,6 +17,7 @@ import { Footer } from './components/Footer';
 export function App() {
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
   const [adminModalOpen, setAdminModalOpen] = useState(false);
+  const [calculatorModalOpen, setCalculatorModalOpen] = useState(false);
   
   const [selectedPackage, setSelectedPackage] = useState('Professional');
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
@@ -74,10 +75,12 @@ export function App() {
 
         <PricingSection
           onOpenInquiry={handleOpenInquiry}
-          onScrollToCalculator={() => handleScrollTo('calculator')}
+          onScrollToCalculator={() => setCalculatorModalOpen(true)}
         />
 
         <PricingCalculator
+          isOpen={calculatorModalOpen}
+          onClose={() => setCalculatorModalOpen(false)}
           onOpenInquiryWithCustom={handleOpenInquiryWithCustom}
         />
 
