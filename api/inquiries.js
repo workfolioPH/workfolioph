@@ -1,13 +1,30 @@
 import supabase from './db-client.js';
 
+async function requireAdmin(req, res) {
+  const header = req.headers.authorization || '';
+  const token = header.startsWith('Bearer ') ? header.slice(7) : '';
+  if (!token) {
+    res.status(401).json({ error: 'Authentication required.' });
+    return false;
+  }
+
+  const { data: { user }, error } = await supabase.auth.getUser(token);
+  if (error || !user) {
+    res.status(401).json({ error: 'Authentication required.' });
+    return false;
+  }
+  return true;
+}
+
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', process.env.PUBLIC_SITE_ORIGIN || '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   try {
     if (req.method === 'GET') {
+      if (!(await requireAdmin(req, res))) return;
       const { ref, status } = req.query || {};
       
       let query = supabase.from('inquiries').select('*').order('created_at', { ascending: false });
@@ -71,6 +88,7 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'PUT') {
+      if (!(await requireAdmin(req, res))) return;
       const { id, status, notes } = req.body;
       if (!id) return res.status(400).json({ error: 'Inquiry ID is required' });
 

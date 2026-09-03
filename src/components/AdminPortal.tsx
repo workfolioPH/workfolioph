@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, RefreshCw, CheckCircle, Search, Clock, FileText, UserCheck } from 'lucide-react';
 import { Inquiry } from '../types';
+import supabase from '../lib/supabase';
 
 interface AdminPortalProps {
   isOpen: boolean;
@@ -12,11 +13,40 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
   const [loading, setLoading] = useState(true);
   const [filterStatus, setFilterStatus] = useState<string>('All');
   const [search, setSearch] = useState('');
+  const [session, setSession] = useState<Awaited<ReturnType<typeof supabase.auth.getSession>>['data']['session']>(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [authError, setAuthError] = useState('');
+  const [authLoading, setAuthLoading] = useState(false);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setSession(data.session));
+  }, []);
+
+  const signIn = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setAuthLoading(true);
+    setAuthError('');
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) setAuthError('Invalid email or password.');
+    else setSession(data.session);
+    setAuthLoading(false);
+  };
+
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    setSession(null);
+    setInquiries([]);
+  };
 
   const fetchInquiries = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/inquiries');
+      const { data: { session: currentSession } } = await supabase.auth.getSession();
+      if (!currentSession) return;
+      const res = await fetch('/api/inquiries', {
+        headers: { Authorization: `Bearer ${currentSession.access_token}` }
+      });
       const data = await res.json();
       if (Array.isArray(data)) {
         setInquiries(data);
@@ -29,14 +59,19 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
   };
 
   useEffect(() => {
-    if (isOpen) fetchInquiries();
-  }, [isOpen]);
+    if (isOpen && session) fetchInquiries();
+  }, [isOpen, session]);
 
   const handleUpdateStatus = async (id: number, newStatus: string) => {
     try {
+      const { data: { session: currentSession } } = await supabase.auth.getSession();
+      if (!currentSession) return;
       const res = await fetch('/api/inquiries', {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${currentSession.access_token}`
+        },
         body: JSON.stringify({ id, status: newStatus })
       });
       if (res.ok) {
@@ -48,6 +83,22 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
   };
 
   if (!isOpen) return null;
+
+  if (!session) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <form onSubmit={signIn} className="relative w-full max-w-sm bg-[#0C1210] border border-emerald-800/80 rounded-3xl p-6 text-white shadow-2xl space-y-4">
+          <button type="button" onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white"><X className="w-5 h-5" /></button>
+          <h2 className="text-xl font-bold">Admin sign in</h2>
+          <p className="text-xs text-gray-400">Sign in with the administrator account created in Supabase.</p>
+          {authError && <div className="p-3 rounded-xl bg-red-950 border border-red-800 text-red-200 text-xs">{authError}</div>}
+          <input type="email" required placeholder="Admin email" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-slate-900 border border-emerald-800 rounded-xl px-3 py-2 text-sm" />
+          <input type="password" required placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="w-full bg-slate-900 border border-emerald-800 rounded-xl px-3 py-2 text-sm" />
+          <button disabled={authLoading} className="w-full py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-bold disabled:opacity-50">{authLoading ? 'Signing in…' : 'Sign in'}</button>
+        </form>
+      </div>
+    );
+  }
 
   const filtered = inquiries.filter(item => {
     const matchesStatus = filterStatus === 'All' || item.status === filterStatus;
