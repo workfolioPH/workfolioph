@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+/* WorkFolio PH color-only theme override.
+   Layout, typography, spacing, components, and behavior are unchanged. */
+:root {
+  --wf-ink: #0C1210;
+  --wf-ink-deep: #101613;
+  --wf-gold: #E5A61B;
+  --wf-gold-bright: #F2B62F;
+  --wf-gold-soft: #EAD08F;
+  --wf-gold-pale: #FBF0D3;
+  --wf-gold-deep: #B37F0A;
+  --wf-cream: #F1EEE3;
+  --wf-muted: #A9B5AB;
+  --wf-border: #5C4A1B;
+}
+
+/* Deep background surfaces */
+.bg-\[\#0B100D\] { background-color: var(--wf-ink) !important; }
+.bg-\[\#090E0B\] { background-color: var(--wf-ink-deep) !important; }
+.bg-\[\#080D0A\] { background-color: var(--wf-ink) !important; }
+.bg-\[\#0D1410\], .bg-\[\#0C1210\] { background-color: #141C17 !important; }
+
+/* Emerald-to-gold mapping */
+.bg-emerald-500 { background-color: var(--wf-gold) !important; }
+.bg-emerald-400 { background-color: var(--wf-gold-bright) !important; }
+.bg-emerald-950 { background-color: #1A241E !important; }
+.bg-emerald-900 { background-color: #3A2E0F !important; }
+.bg-emerald-800 { background-color: var(--wf-border) !important; }
+.bg-emerald-700 { background-color: #80601A !important; }
+
+.text-emerald-400 { color: var(--wf-gold-bright) !important; }
+.text-emerald-300 { color: var(--wf-gold-soft) !important; }
+.text-emerald-200 { color: var(--wf-cream) !important; }
+.text-emerald-500 { color: var(--wf-gold) !important; }
+.text-emerald-600 { color: var(--wf-gold-deep) !important; }
+
+.border-emerald-900, .border-emerald-900\/30, .border-emerald-900\/40, .border-emerald-900\/50, .border-emerald-900\/60 {
+  border-color: rgba(92, 74, 27, .55) !important;
+}
+.border-emerald-800, .border-emerald-800\/40, .border-emerald-800\/50, .border-emerald-800\/60, .border-emerald-800\/80 {
+  border-color: rgba(229, 166, 27, .42) !important;
+}
+
+.hover\:bg-emerald-400:hover { background-color: var(--wf-gold-bright) !important; }
+.hover\:bg-emerald-900:hover { background-color: #4A3912 !important; }
+.hover\:bg-emerald-800:hover { background-color: #6B5017 !important; }
+.hover\:text-emerald-400:hover { color: var(--wf-gold-bright) !important; }
+.hover\:text-emerald-300:hover { color: var(--wf-gold-soft) !important; }
+.focus\:border-emerald-400:focus { border-color: var(--wf-gold-bright) !important; }
+
+/* Keep WhatsApp actions recognizable as WhatsApp green. */
+a[href^="https://wa.me"], a[href^="https://wa.me"] * {
+  --tw-ring-color: #22B358;
+}
