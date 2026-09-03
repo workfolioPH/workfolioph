@@ -13,6 +13,12 @@ async function requireAdmin(req, res) {
     res.status(401).json({ error: 'Authentication required.' });
     return false;
   }
+
+  const adminEmail = (process.env.ADMIN_EMAIL || '').trim().toLowerCase();
+  if (!adminEmail || user.email?.toLowerCase() !== adminEmail) {
+    res.status(403).json({ error: 'Administrator access required.' });
+    return false;
+  }
   return true;
 }
 
