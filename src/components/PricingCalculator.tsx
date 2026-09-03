@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Calculator, CheckSquare, Square, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Calculator, CheckSquare, Square, Sparkles, ArrowRight, ShieldCheck, X } from 'lucide-react';
 
 interface PricingCalculatorProps {
+  isOpen: boolean;
+  onClose: () => void;
   onOpenInquiryWithCustom: (packageName: string, addons: string[], price: number) => void;
 }
 
@@ -20,7 +22,7 @@ const ADDON_OPTIONS = [
   { id: 'annual-care', name: '1-Year Annual Portfolio Maintenance', price: 1500, desc: 'Quarterly content updates & domain renewal care' }
 ];
 
-export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenInquiryWithCustom }) => {
+export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ isOpen, onClose, onOpenInquiryWithCustom }) => {
   const [selectedBase, setSelectedBase] = useState('Professional');
   const [selectedAddons, setSelectedAddons] = useState<string[]>(['ats-cv']);
 
@@ -44,8 +46,14 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenInqu
     onOpenInquiryWithCustom(baseObj.name, addonNames, grandTotal);
   };
 
+  if (!isOpen) return null;
+
   return (
-    <section id="calculator" className="py-16 md:py-24 bg-[#090E0B] text-white border-b border-emerald-900/30">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+      <section id="calculator" role="dialog" aria-modal="true" aria-labelledby="calculator-title" className="relative w-full max-w-7xl max-h-[92vh] overflow-y-auto py-8 md:py-12 bg-[#090E0B] text-white border border-emerald-900/50 rounded-3xl">
+        <button onClick={onClose} aria-label="Close price calculator" className="absolute top-4 right-4 z-10 p-2 rounded-full text-gray-400 hover:text-white hover:bg-emerald-950">
+          <X className="w-5 h-5" />
+        </button>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -54,7 +62,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenInqu
             <Calculator className="w-3.5 h-3.5" />
             <span>INTERACTIVE COST CALCULATOR</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 id="calculator-title" className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
             Build your custom package estimate.
           </h2>
           <p className="text-gray-400 text-sm sm:text-base">
@@ -196,6 +204,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onOpenInqu
         </div>
 
       </div>
-    </section>
+      </section>
+    </div>
   );
 };
