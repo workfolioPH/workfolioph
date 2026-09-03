@@ -1,1 +1,26 @@
 @import "tailwindcss";
+/* Responsive safety: prevent long domains, prices, labels, and modal content
+   from widening the viewport on narrow phones. */
+html, body, #root { width: 100%; max-width: 100%; overflow-x: hidden; }
+*, *::before, *::after { min-width: 0; }
+img, svg, video, canvas { max-width: 100%; }
+button, a, input, select, textarea { max-width: 100%; }
+.font-mono { overflow-wrap: anywhere; word-break: break-word; }
+
+@media (max-width: 639px) {
+  /* Keep full-screen dialogs inside the visible phone viewport. */
+  .fixed.inset-0 { padding: .75rem; }
+  .fixed.inset-0 > [class*="max-w-5xl"],
+  .fixed.inset-0 > [class*="max-w-7xl"] {
+    max-height: calc(100dvh - 1.5rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* Keep wide admin tables scrollable inside their panel, not across the page. */
+  .fixed.inset-0 table { min-width: 760px; }
+
+  /* Stack toolbar controls and make long preview URLs wrap safely. */
+  .fixed.inset-0 .flex.items-center.justify-between { flex-wrap: wrap; }
+  .fixed.inset-0 .font-mono { overflow-wrap: anywhere; word-break: break-word; }
+}
