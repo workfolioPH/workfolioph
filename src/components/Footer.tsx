@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Globe className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Web: workfolioph.web.app</span>
+                <span>Web: workfolioph.vercel.app</span>
               </li>
             </ul>
           </div>
