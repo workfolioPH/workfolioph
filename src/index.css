@@ -1,7 +1,10 @@
 @import "tailwindcss";
 /* Responsive safety: prevent long domains, prices, labels, and modal content
    from widening the viewport on narrow phones. */
-html, body, #root { width: 100%; max-width: 100%; overflow-x: hidden; }
+/* Use clip instead of overflow-x:hidden: hidden can create an extra scroll
+   container and prevent position:sticky from working on mobile browsers. */
+html, body, #root { width: 100%; max-width: 100%; overflow-x: clip; }
+.site-header, header.sticky { position: sticky !important; top: 0 !important; z-index: 50 !important; }
 *, *::before, *::after { min-width: 0; }
 img, svg, video, canvas { max-width: 100%; }
 button, a, input, select, textarea { max-width: 100%; }
