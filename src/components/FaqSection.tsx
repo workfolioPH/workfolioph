@@ -52,7 +52,7 @@ export const FaqSection: React.FC = () => {
       .catch(() => {});
   }, []);
 
-  const categories = ['All', 'Domain & Hosting', 'Payments', 'CV & Media', 'General'];
+  const categories = ['All', 'Domain & Hosting', 'Payments', 'CV & Media', 'General', 'Guarantee'];
 
   const filteredFaqs = faqs.filter(item => {
     const matchesCat = category === 'All' || item.category === category;
