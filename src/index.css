@@ -27,3 +27,4 @@ button, a, input, select, textarea { max-width: 100%; }
   /* Stack toolbar controls and make long preview URLs wrap safely. */
   .fixed.inset-0 .flex.items-center.justify-between { flex-wrap: wrap; }
   .fixed.inset-0 .font-mono { overflow-wrap: anywhere; word-break: break-word; }
+}
