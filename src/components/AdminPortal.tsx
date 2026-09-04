@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, RefreshCw, CheckCircle, Search, Clock, FileText, UserCheck } from 'lucide-react';
+import { X, RefreshCw, Search, UserCheck } from 'lucide-react';
 import { Inquiry } from '../types';
-import supabase from '../lib/supabase';
+import supabase, { isSupabaseConfigured } from '../lib/supabase';
 
 interface AdminPortalProps {
   isOpen: boolean;
@@ -18,6 +18,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
+  const [loadError, setLoadError] = useState('');
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
@@ -25,6 +26,10 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
 
   const signIn = async (event: React.FormEvent) => {
     event.preventDefault();
+    if (!isSupabaseConfigured) {
+      setAuthError('Supabase is not configured for this deployment. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in Vercel environment variables, then redeploy.');
+      return;
+    }
     setAuthLoading(true);
     setAuthError('');
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
@@ -40,25 +45,32 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
   };
 
   const fetchInquiries = async () => {
-    setLoading(true);
     try {
       const { data: { session: currentSession } } = await supabase.auth.getSession();
-      if (!currentSession) return;
+      if (!currentSession) { setLoading(false); return; }
+      setLoading(true);
       const res = await fetch('/api/inquiries', {
         headers: { Authorization: `Bearer ${currentSession.access_token}` }
       });
-      const data = await res.json();
-      if (Array.isArray(data)) {
+      const data = await res.json().catch(() => null);
+      if (res.ok && Array.isArray(data)) {
         setInquiries(data);
+        setLoadError('');
+      } else {
+        setLoadError((data && data.error) || `Inquiries API returned HTTP ${res.status}. Check that the /api/inquiries function is deployed and SUPABASE_SERVICE_ROLE_KEY + ADMIN_EMAIL are set in Vercel.`);
       }
     } catch (err) {
       console.error(err);
+      setLoadError('Could not reach the inquiries API.');
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
+    // fetchInquiries() awaits getSession() before any state update, so this is
+    // not a synchronous setState-in-effect; suppress the conservative rule.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (isOpen && session) fetchInquiries();
   }, [isOpen, session]);
 
@@ -119,9 +131,14 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
             </h2>
             <p className="text-xs text-gray-400">Manage client submissions, update build status, and track revenue.</p>
           </div>
-          <button onClick={onClose} className="p-2 rounded-full text-gray-400 hover:text-white">
-            <X className="w-6 h-6" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button onClick={signOut} className="px-3 py-1.5 rounded-xl bg-emerald-950 border border-emerald-800 text-emerald-300 hover:bg-emerald-900 text-xs font-semibold">
+              Sign out
+            </button>
+            <button onClick={onClose} aria-label="Close admin dashboard" className="p-2 rounded-full text-gray-400 hover:text-white">
+              <X className="w-6 h-6" />
+            </button>
+          </div>
         </div>
 
         {/* Toolbar */}
@@ -149,6 +166,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
               <option value="In Progress">In Progress</option>
               <option value="Reviewing">Reviewing</option>
               <option value="Live">Live</option>
+              <option value="Completed">Completed</option>
             </select>
 
             <button
@@ -159,6 +177,12 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
             </button>
           </div>
         </div>
+
+        {loadError && (
+          <div className="mb-4 p-3 rounded-xl bg-red-950 border border-red-800 text-red-200 text-xs">
+            {loadError}
+          </div>
+        )}
 
         {/* Table */}
         <div className="overflow-x-auto">
@@ -208,6 +232,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ isOpen, onClose }) => 
                         <option value="In Progress">In Progress</option>
                         <option value="Reviewing">Reviewing</option>
                         <option value="Live">Live</option>
+              <option value="Completed">Completed</option>
                         <option value="Completed">Completed</option>
                       </select>
                     </td>
