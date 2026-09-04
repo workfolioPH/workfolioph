@@ -4,9 +4,10 @@ import { PhoneCall, Menu, X, ArrowRight, LayoutDashboard } from 'lucide-react';
 interface HeaderProps {
   onOpenInquiry: (packageName?: string) => void;
   onOpenAdmin: () => void;
+  onOpenCalculator: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenInquiry, onOpenAdmin }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenInquiry, onOpenAdmin, onOpenCalculator }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -56,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenInquiry, onOpenAdmin }) =>
           <button onClick={() => scrollToSection('pricing')} className="hover:text-emerald-400 transition-colors">
             Packages & Pricing
           </button>
-          <button onClick={() => scrollToSection('calculator')} className="hover:text-emerald-400 transition-colors">
+          <button onClick={onOpenCalculator} className="hover:text-emerald-400 transition-colors">
             Custom Quote
           </button>
           <button onClick={() => scrollToSection('workflow')} className="hover:text-emerald-400 transition-colors">
@@ -132,7 +133,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenInquiry, onOpenAdmin }) =>
             Packages & Pricing (from ₱3,500)
           </button>
           <button
-            onClick={() => scrollToSection('calculator')}
+            onClick={() => { setMobileMenuOpen(false); onOpenCalculator(); }}
             className="block w-full text-left py-2 text-sm font-medium text-gray-300 hover:text-emerald-400"
           >
             Custom Quote Calculator
