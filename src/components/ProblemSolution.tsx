@@ -1,5 +1,5 @@
 import React from 'react';
-import { XCircle, CheckCircle, ArrowRight, ShieldAlert, Sparkles, AlertCircle } from 'lucide-react';
+import { XCircle, CheckCircle, ArrowRight, Sparkles, AlertCircle } from 'lucide-react';
 
 interface ProblemSolutionProps {
   onOpenInquiry: () => void;

@@ -1,5 +1,5 @@
 {
-  "name": "vite-react-ts-fullstack",
+  "name": "workfolioph",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "bash scripts/prepublish-check.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.1",

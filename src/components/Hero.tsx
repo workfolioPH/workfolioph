@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, ArrowRight, Play, FileText, QrCode, Star, Sparkles, Video, Image, ChevronRight } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowRight, Play, FileText, QrCode, Star, Sparkles, Image } from 'lucide-react';
 
 interface HeroProps {
   onOpenInquiry: (pkg?: string) => void;
@@ -128,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
                 {/* Profile Header */}
                 <div className="flex items-center gap-3 bg-gradient-to-r from-emerald-950/80 to-slate-900 p-3 rounded-xl border border-emerald-800/40">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
+                    src="/images/sample-avatar-maria.jpg"
                     alt="Sample Portfolio Nurse"
                     className="w-14 h-14 rounded-full object-cover border-2 border-emerald-400"
                   />
@@ -170,7 +170,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
                   <div className="grid grid-cols-3 gap-1.5">
                     <div className="relative aspect-video rounded-lg overflow-hidden bg-slate-900 border border-emerald-900/50 group">
                       <img
-                        src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=200&q=80"
+                        src="/images/hero-work-video.jpg"
                         alt="ICU Procedure"
                         className="w-full h-full object-cover"
                       />
@@ -180,14 +180,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
                     </div>
                     <div className="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-emerald-900/50">
                       <img
-                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=200&q=80"
+                        src="/images/profession-healthcare.jpg"
                         alt="Dialysis Equipment Setup"
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="aspect-video rounded-lg overflow-hidden bg-slate-900 border border-emerald-900/50">
                       <img
-                        src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=200&q=80"
+                        src="/images/hero-certificate.jpg"
                         alt="BLS License Certificate"
                         className="w-full h-full object-cover"
                       />

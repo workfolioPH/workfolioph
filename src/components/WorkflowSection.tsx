@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Layers, Send, Cpu, CheckCircle2, Rocket, Share2, Search, ArrowRight, Clock, AlertCircle } from 'lucide-react';
+import { Layers, Send, Cpu, CheckCircle2, Rocket, Share2, Search, Clock, AlertCircle } from 'lucide-react';
 
-interface WorkflowSectionProps {
-  onOpenInquiry: () => void;
-}
+import { Inquiry } from '../types';
 
 const STEPS = [
   {
@@ -44,9 +42,9 @@ const STEPS = [
   }
 ];
 
-export const WorkflowSection: React.FC<WorkflowSectionProps> = ({ onOpenInquiry }) => {
+export const WorkflowSection: React.FC = () => {
   const [refCode, setRefCode] = useState('');
-  const [trackerResult, setTrackerResult] = useState<any>(null);
+  const [trackerResult, setTrackerResult] = useState<Inquiry | null>(null);
   const [tracking, setTracking] = useState(false);
   const [trackerError, setTrackerError] = useState('');
 
@@ -66,7 +64,7 @@ export const WorkflowSection: React.FC<WorkflowSectionProps> = ({ onOpenInquiry 
       } else {
         setTrackerError('No inquiry found with this Reference Code. Please check your reference (e.g., WF-892140).');
       }
-    } catch (err) {
+    } catch {
       setTrackerError('Could not connect to tracker. Please try again.');
     } finally {
       setTracking(false);

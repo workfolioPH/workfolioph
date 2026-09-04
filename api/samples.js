@@ -7,18 +7,16 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   try {
-    const { category } = req.query || {};
-    let query = supabase.from('faqs').select('*').eq('is_published', true).order('id', { ascending: true });
-    
-    if (category && category !== 'All') {
-      query = query.eq('category', category);
-    }
+    const { data, error } = await supabase
+      .from('portfolio_samples')
+      .select('*')
+      .eq('is_published', true)
+      .order('id', { ascending: true });
 
-    const { data, error } = await query;
     if (error) throw error;
     return res.status(200).json(data || []);
   } catch (err) {
-    console.error('FAQs API error:', err);
+    console.error('Samples API error:', err);
     res.status(500).json({ error: err.message });
   }
 }

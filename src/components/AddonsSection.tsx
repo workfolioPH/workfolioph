@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Video, Image, Globe, RefreshCw, Briefcase, CheckCircle, ArrowRight } from 'lucide-react';
+import { FileText, Video, Image, CheckCircle, ArrowRight } from 'lucide-react';
 
 interface AddonsSectionProps {
   onOpenInquiry: (packageName?: string) => void;

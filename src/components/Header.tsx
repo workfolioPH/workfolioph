@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, PhoneCall, Sparkles, Menu, X, ArrowRight, LayoutDashboard } from 'lucide-react';
+import { PhoneCall, Menu, X, ArrowRight, LayoutDashboard } from 'lucide-react';
 
 interface HeaderProps {
   onOpenInquiry: (packageName?: string) => void;

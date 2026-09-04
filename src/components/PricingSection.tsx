@@ -1,12 +1,12 @@
 import React from 'react';
-import { Check, Star, ShieldCheck, Zap, Sparkles, ArrowRight, Info } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, Info } from 'lucide-react';
 
 interface PricingSectionProps {
   onOpenInquiry: (packageName: string) => void;
   onScrollToCalculator: () => void;
 }
 
-export const PACKAGES = [
+const PACKAGES = [
   {
     name: 'Starter',
     price: 3500,

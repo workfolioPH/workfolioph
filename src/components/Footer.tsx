@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, PhoneCall, Mail, Globe, Heart } from 'lucide-react';
+import { PhoneCall, Mail, Globe, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (

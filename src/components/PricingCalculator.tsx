@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, CheckSquare, Square, Sparkles, ArrowRight, ShieldCheck, X } from 'lucide-react';
+import { Calculator, CheckSquare, Square, ArrowRight, ShieldCheck, X } from 'lucide-react';
 
 interface PricingCalculatorProps {
   isOpen: boolean;

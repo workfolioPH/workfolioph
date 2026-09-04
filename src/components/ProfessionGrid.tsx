@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stethoscope, HardHat, Flame, Laptop, Ship, Utensils, Briefcase, GraduationCap, ArrowUpRight } from 'lucide-react';
+import { Stethoscope, HardHat, Flame, Laptop, Ship, Utensils, ArrowUpRight } from 'lucide-react';
 
 interface ProfessionGridProps {
   onSelectProfession: (profession: string) => void;
@@ -10,7 +10,7 @@ const PROFESSIONS = [
     title: 'Healthcare & Nursing',
     subtitle: 'Nurses, Medical Techs, Caregivers, Physical Therapists',
     icon: Stethoscope,
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=400&q=80',
+    image: '/images/profession-healthcare.jpg',
     details: 'Highlight BLS/ACLS licenses, ICU experience, hospital equipment mastery, and medical certifications.'
   },
   {
@@ -31,7 +31,7 @@ const PROFESSIONS = [
     title: 'IT, Virtual Assistants & Creatives',
     subtitle: 'VAs, Software Devs, Graphic Designers, Digital Marketers',
     icon: Laptop,
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80',
+    image: '/images/profession-it-creative.jpg',
     details: 'Display client case studies, tool proficiencies (CRM, Notion, Figma), video edits, and workflow screenshots.'
   },
   {

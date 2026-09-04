@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Smartphone, Monitor, Play, FileText, CheckCircle, ExternalLink, QrCode, Award, Shield, Image as ImageIcon } from 'lucide-react';
+import { Smartphone, Monitor, Play, CheckCircle, QrCode, Award, Shield, Image as ImageIcon } from 'lucide-react';
 
 interface LivePreviewerProps {
   onOpenInquiry: (pkg?: string) => void;
@@ -12,7 +12,7 @@ const SAMPLE_PORTFOLIOS = [
     profession: 'Senior ICU Nurse',
     industry: 'Healthcare',
     location: 'Doha, Qatar (8 Years Exp)',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+    avatar: '/images/sample-avatar-maria.jpg',
     subdomain: 'maria-santos.workfolio.ph',
     summary: 'DHA/HAAD Licensed ICU Nurse with expertise in hemodialysis, mechanical ventilation, and post-operative critical care.',
     skills: ['ICU Ventilation', 'Hemodialysis', 'BLS & ACLS Certified', 'Patient Triage', 'Patient Care Systems'],
@@ -25,7 +25,7 @@ const SAMPLE_PORTFOLIOS = [
     profession: 'Civil & Structural Engineer',
     industry: 'Engineering & Construction',
     location: 'Riyadh, KSA (10 Years Exp)',
-    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80',
+    avatar: '/images/sample-avatar-juan.jpg',
     subdomain: 'juandelacruz-eng.com',
     summary: 'Lead QA/QC Engineer for high-rise commercial developments. Specialized in structural inspection, AutoCAD, and Primavera P6.',
     skills: ['AutoCAD & Revit', 'QA/QC Inspection', 'Primavera P6', 'Structural Concrete', 'Project Safety ISO 45001'],
@@ -38,7 +38,7 @@ const SAMPLE_PORTFOLIOS = [
     profession: '6G SMAW/GTAW Pipe Welder',
     industry: 'Skilled Trades',
     location: 'Subic, Philippines (6 Years Exp)',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    avatar: '/images/sample-avatar-ramon.jpg',
     subdomain: 'ramontan-welder.workfolio.ph',
     summary: 'Certified 6G Pipe Welder with marine shipyard and refinery pipeline experience. TESDA NC III Certified.',
     skills: ['6G Pipe Welding', 'TIG / GTAW', 'Stick / SMAW', 'Blueprint Reading', 'Non-Destructive Testing'],
@@ -51,7 +51,7 @@ const SAMPLE_PORTFOLIOS = [
     profession: 'Executive Virtual Assistant & Social Media Manager',
     industry: 'IT & Virtual Assistance',
     location: 'Cebu City, Philippines (5 Years Exp)',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
+    avatar: '/images/sample-avatar-angela.jpg',
     subdomain: 'angelareyes.workfolio.ph',
     summary: 'Top-rated VA supporting US e-commerce founders with inbox management, GoHighLevel CRM, Canva design, and Shopify maintenance.',
     skills: ['Shopify & WooCommerce', 'GoHighLevel CRM', 'Canva Graphic Design', 'Google Workspace Admin', 'Asana & Notion'],

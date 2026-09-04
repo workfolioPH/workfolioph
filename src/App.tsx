@@ -64,7 +64,7 @@ export function App() {
         />
 
         <ProfessionGrid
-          onSelectProfession={(prof) => {
+          onSelectProfession={() => {
             handleScrollTo('preview');
           }}
         />
@@ -84,9 +84,7 @@ export function App() {
           onOpenInquiryWithCustom={handleOpenInquiryWithCustom}
         />
 
-        <WorkflowSection
-          onOpenInquiry={() => handleOpenInquiry('Professional')}
-        />
+        <WorkflowSection />
 
         <QrGeneratorDemo />
 
