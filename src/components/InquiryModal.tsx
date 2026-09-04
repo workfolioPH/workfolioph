@@ -76,13 +76,14 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
     : '';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-xl bg-[#0D1410] border border-emerald-800/80 rounded-3xl p-6 sm:p-8 text-white shadow-2xl my-8">
+    <div className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center p-3 sm:p-4 pt-16 sm:pt-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+      <div className="inquiry-modal-panel relative w-full max-w-xl max-h-[calc(100dvh-5rem)] sm:max-h-[calc(100dvh-2rem)] overflow-y-auto bg-[#0D1410] border border-emerald-800/80 rounded-3xl p-6 sm:p-8 text-white shadow-2xl my-2 sm:my-8">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-gray-400 hover:text-white hover:bg-emerald-950"
+          aria-label="Close order and consultation dialog"
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-[#0D1410] text-gray-300 hover:text-white hover:bg-emerald-950 shadow-md"
         >
           <X className="w-5 h-5" />
         </button>
