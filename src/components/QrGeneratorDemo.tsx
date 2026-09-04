@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { QrCode, Download, Share2, Sparkles, User, Globe, Check } from 'lucide-react';
+import { QrCode, Share2, Check } from 'lucide-react';
 
 export const QrGeneratorDemo: React.FC = () => {
   const [name, setName] = useState('Juan Dela Cruz');
@@ -7,7 +7,7 @@ export const QrGeneratorDemo: React.FC = () => {
   const [subdomain, setSubdomain] = useState('juandelacruz');
   const [copied, setCopied] = useState(false);
 
-  const fullUrl = `https://${subdomain.toLowerCase().replace(/[^a-z0-9-]/g, '') || 'yourname'}.web.app`;
+  const fullUrl = `https://${subdomain.toLowerCase().replace(/[^a-z0-9-]/g, '') || 'yourname'}.workfolio.ph`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(fullUrl);
@@ -73,7 +73,7 @@ export const QrGeneratorDemo: React.FC = () => {
                     onChange={(e) => setSubdomain(e.target.value)}
                     className="bg-transparent text-emerald-300 font-bold focus:outline-none flex-1 px-1"
                   />
-                  <span>.web.app</span>
+                  <span>.workfolio.ph</span>
                 </div>
               </div>
 
