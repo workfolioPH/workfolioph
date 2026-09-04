@@ -128,7 +128,7 @@ export const WorkflowSection: React.FC = () => {
           <form onSubmit={handleTrackInquiry} className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
-              placeholder="Enter Ref Code (e.g. WF-1001)"
+              placeholder="Enter Ref Code (e.g. WF-123456)"
               value={refCode}
               onChange={(e) => setRefCode(e.target.value)}
               className="flex-1 bg-slate-900 border border-emerald-800/80 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400"
@@ -142,6 +142,19 @@ export const WorkflowSection: React.FC = () => {
               <span>{tracking ? 'Searching...' : 'Check Status'}</span>
             </button>
           </form>
+
+          <p className="text-center text-[10px] text-gray-400 leading-relaxed">
+            Note: amounts shown are exactly what was submitted with your code. To add extras or change your package later,{" "}
+            <a
+              href="https://wa.me/639918720311?text=Hi%20WorkFolio%20PH!%20I%20want%20to%20update%20my%20order%20(reference%20code%20below):%20"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 font-semibold hover:underline"
+            >
+              message us on WhatsApp with your code
+            </a>{" "}
+            — the tracker will then show your updated total.
+          </p>
 
           {/* Tracker Error */}
           {trackerError && (
