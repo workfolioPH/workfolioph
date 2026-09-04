@@ -24,7 +24,7 @@ const PROFESSIONS = [
     title: 'Skilled Trades & Technical',
     subtitle: 'Welders, Pipefitters, Electricians, Heavy Equipment Operators',
     icon: Flame,
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=400&q=80',
+    image: '/images/skilled-trades.jpg',
     details: 'Embed 6G welding videos, TESDA certifications, machinery operation clips, and work precision shots.'
   },
   {
@@ -38,7 +38,7 @@ const PROFESSIONS = [
     title: 'Maritime & Seafarers',
     subtitle: 'Marine Engineers, Deck Officers, Stewards, Ratings',
     icon: Ship,
-    image: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=400&q=80',
+    image: '/images/seafarer-maritime.jpg',
     details: 'List STCW certificates, Seaman Book details, vessel types sailed, and engine/deck maintenance logs.'
   },
   {
