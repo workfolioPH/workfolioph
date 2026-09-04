@@ -45,7 +45,7 @@ const PROFESSIONS = [
     title: 'Culinary, Hospitality & Services',
     subtitle: 'Executive Chefs, Baristas, Hotel Supervisors, Event Staff',
     icon: Utensils,
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80',
+    image: '/images/services.jpg',
     details: 'High-res dish plating photos, food safety accreditations, latte art videos, and banqueting experience.'
   }
 ];
