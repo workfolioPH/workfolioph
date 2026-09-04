@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 
   try {
     const { category } = req.query || {};
-    let query = supabase.from('faqs').select('*').order('id', { ascending: true });
+    let query = supabase.from('faqs').select('*').eq('is_published', true).order('id', { ascending: true });
     
     if (category && category !== 'All') {
       query = query.eq('category', category);
