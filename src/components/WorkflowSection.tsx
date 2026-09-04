@@ -64,7 +64,7 @@ export const WorkflowSection: React.FC<WorkflowSectionProps> = ({ onOpenInquiry 
       if (res.ok && data && data.length > 0) {
         setTrackerResult(data[0]);
       } else {
-        setTrackerError('No inquiry found with this Reference Code. Please check your reference (e.g., WF-89214).');
+        setTrackerError('No inquiry found with this Reference Code. Please check your reference (e.g., WF-892140).');
       }
     } catch (err) {
       setTrackerError('Could not connect to tracker. Please try again.');
@@ -123,7 +123,7 @@ export const WorkflowSection: React.FC<WorkflowSectionProps> = ({ onOpenInquiry 
               <span>Track Your Portfolio Order Status</span>
             </h3>
             <p className="text-xs text-gray-300">
-              Already ordered? Enter your Reference Code (e.g. <code className="text-emerald-300 bg-emerald-950 px-1 rounded">WF-89214</code>) to check your current build status.
+              Already ordered? Enter your Reference Code (e.g. <code className="text-emerald-300 bg-emerald-950 px-1 rounded">WF-892140</code>) to check your current build status.
             </p>
           </div>
 
