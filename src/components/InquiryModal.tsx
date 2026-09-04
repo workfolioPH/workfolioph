@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle, PhoneCall, ShieldCheck, Sparkles, MessageSquare } from 'lucide-react';
+import { X, Send, CheckCircle, PhoneCall, ShieldCheck, Sparkles } from 'lucide-react';
+import { Inquiry } from '../types';
 
 interface InquiryModalProps {
   isOpen: boolean;
@@ -21,11 +22,11 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
   const [phone, setPhone] = useState('');
   const [contactMethod, setContactMethod] = useState<'WhatsApp' | 'Viber' | 'Email' | 'Phone'>('WhatsApp');
   const [profession, setProfession] = useState('');
-  const [packageName, setPackageName] = useState(preselectedPackage);
+  const packageName = preselectedPackage;
   const [customDomain, setCustomDomain] = useState('');
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
-  const [successData, setSuccessData] = useState<any>(null);
+  const [successData, setSuccessData] = useState<Inquiry | null>(null);
   const [errorMsg, setErrorMsg] = useState('');
 
   if (!isOpen) return null;
@@ -64,7 +65,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
       } else {
         setErrorMsg(data.error || 'Failed to submit inquiry.');
       }
-    } catch (err) {
+    } catch {
       setErrorMsg('Network error. Please try again or contact us directly on WhatsApp.');
     } finally {
       setLoading(false);
@@ -194,7 +195,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
                 <label className="block text-xs font-medium text-gray-300 mb-1">Preferred Contact Method</label>
                 <select
                   value={contactMethod}
-                  onChange={(e) => setContactMethod(e.target.value as any)}
+                  onChange={(e) => setContactMethod(e.target.value as 'WhatsApp' | 'Viber' | 'Email' | 'Phone')}
                   className="w-full bg-slate-900 border border-emerald-800/80 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400"
                 >
                   <option value="WhatsApp">WhatsApp</option>
