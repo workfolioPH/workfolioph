@@ -51,6 +51,7 @@ export function App() {
       <Header
         onOpenInquiry={handleOpenInquiry}
         onOpenAdmin={() => setAdminModalOpen(true)}
+        onOpenCalculator={() => setCalculatorModalOpen(true)}
       />
 
       <main>
