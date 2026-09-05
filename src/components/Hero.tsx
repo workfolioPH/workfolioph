@@ -65,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
               </div>
               <div className="flex items-center gap-2 bg-emerald-950/40 border border-emerald-900/50 px-3 py-2 rounded-lg">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>2–3 Day Delivery</span>
+                <span>2–5 Day Delivery</span>
               </div>
             </div>
 
