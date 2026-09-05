@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
               Turn your experience, skills, certifications, ATS CV, photos and work videos into one professional digital portfolio link for employers.
             </p>
             <p className="text-[10px] text-emerald-400 font-mono">
-              Packages from ₱3,500 • Fast 2–3 Day Delivery
+              Packages from ₱3,500 • 2–5 business day delivery
             </p>
           </div>
 
@@ -63,6 +63,17 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
+        </div>
+
+        {/* Privacy & Data Notice */}
+        <div id="privacy" className="pt-6 border-t border-emerald-900/30">
+          <h4 className="text-white font-bold uppercase tracking-wider text-[11px] text-emerald-400 mb-2">Privacy & Data Notice</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-[10px] text-gray-400 leading-relaxed">
+            <p><strong className="text-gray-300">What we collect:</strong> when you submit an order form we receive your name, email, phone number, profession, desired domain, notes, and the files you send (CV, certificates, photos, videos) via email, Google Drive, or WhatsApp.</p>
+            <p><strong className="text-gray-300">Why:</strong> only to prepare your quote, build your portfolio, and contact you about that order. We never sell or share your data, and we never invent credentials on your behalf.</p>
+            <p><strong className="text-gray-300">Your rights:</strong> under the Philippine Data Privacy Act of 2012 (RA 10173) you may request access, correction, or deletion of your information, or withdraw consent, at any time.</p>
+            <p><strong className="text-gray-300">How to exercise them:</strong> email <a href="mailto:workfolioph@proton.me" className="text-emerald-400 hover:underline">workfolioph@proton.me</a> or WhatsApp us with your reference code — requests are actioned within 5 business days. Last updated: 4 September 2026.</p>
+          </div>
         </div>
 
         <div className="pt-6 border-t border-emerald-900/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]">
