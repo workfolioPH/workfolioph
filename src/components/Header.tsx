@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenInquiry, onOpenAdmin, onOp
         <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
         <span>🇵🇭 Digital Portfolios for Filipino Overseas & Local Professionals</span>
         <span className="hidden sm:inline-block text-emerald-400/60">•</span>
-        <span className="hidden sm:inline font-semibold text-emerald-300">Turnaround in 2–3 Days</span>
+        <span className="hidden sm:inline font-semibold text-emerald-300">Turnaround in 2–5 Days</span>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
