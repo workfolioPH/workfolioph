@@ -6,7 +6,7 @@ const INITIAL_FAQS: FaqItem[] = [
   {
     category: 'Domain & Hosting',
     question: 'Do I need my own domain name?',
-    answer: 'No. Every package — including Starter — is hosted on a free WorkFolio subdomain (e.g. yourname.workfolio.ph) that we maintain at zero cost, with no renewal fees, ever. If you would like a personal domain (e.g. juandelacruz.com), you buy and own it yourself at a registrar such as GoDaddy or Namecheap (typically ₱800–₱1,500/year, paid to the registrar, not to us). Our Professional and Premium packages include the complete setup: we configure and connect that domain to your portfolio for you.'
+    answer: 'No. Every package — including Starter — runs on a free subdomain we set up and maintain for you (e.g. yourname.pages.dev, hosted on Cloudflare Pages under our account) — zero cost, no renewal fees, ever, and you never need an account or card of your own. If you would like a personal domain (e.g. juandelacruz.com), you buy and own it yourself at a registrar such as GoDaddy or Namecheap (typically ₱800–₱1,500/year, paid to the registrar, not to us). Our Professional and Premium packages include the complete setup: we configure and connect that domain to your portfolio for you.'
   },
   {
     category: 'Domain & Hosting',
