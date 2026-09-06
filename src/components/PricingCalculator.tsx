@@ -14,11 +14,11 @@ const BASE_OPTIONS = [
 ];
 
 const ADDON_OPTIONS = [
-  { id: 'ats-cv', name: 'ATS-Friendly CV Rewrite', price: 2500, desc: 'Keyword optimization + ATS PDF formatting' },
-  { id: 'cover-letter', name: 'Custom Cover Letter & Email Copy', price: 1000, desc: 'Tailored application letter for target job role' },
+  { id: 'ats-cv', name: 'ATS-Friendly CV Rewrite', price: 800, desc: 'Keyword optimization + ATS PDF formatting' },
+  { id: 'cover-letter', name: 'Custom Cover Letter & Email Copy', price: 500, desc: 'Tailored application letter for target job role' },
   { id: 'video-edit', name: 'Professional Skill Video Editing (3 clips)', price: 2500, desc: 'Trimming, audio boost, captions & TESDA badges' },
   { id: 'photo-grade', name: 'Workplace Photo Enhancement (15 photos)', price: 1500, desc: 'Color grading, lighting fix & background cleanup' },
-  { id: 'linkedin-opt', name: 'LinkedIn Profile Optimization Guide', price: 1200, desc: 'Profile summary, headline & banner graphic' },
+  { id: 'linkedin-opt', name: 'LinkedIn Profile Optimization Guide', price: 500, desc: 'Profile summary, headline & banner graphic' },
   { id: 'annual-care', name: '1-Year Annual Portfolio Maintenance', price: 1500, desc: 'Quarterly content updates & domain renewal care' }
 ];
 
