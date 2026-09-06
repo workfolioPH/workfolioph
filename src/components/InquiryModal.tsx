@@ -219,7 +219,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-300 mb-1">Desired Domain (if applicable)</label>
+                <label className="block text-xs font-medium text-gray-300 mb-1">Your Own Domain (optional — leave blank for a free subdomain)</label>
                 <input
                   type="text"
                   placeholder="e.g. mariasantos.com"
