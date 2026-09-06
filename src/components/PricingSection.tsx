@@ -15,10 +15,10 @@ const PACKAGES = [
     popular: false,
     turnaround: '2–3 Business Days',
     revisions: '2 Rounds of Revisions',
-    subdomain: 'yourname.workfolio.ph',
+    subdomain: 'yourname.pages.dev',
     features: [
       'Single-page mobile-first responsive portfolio',
-      'Free subdomain (yourname.workfolio.ph) — no domain fees, ever',
+      'Free subdomain (yourname.pages.dev) — no domain fees, ever',
       'Professional profile summary & contact buttons',
       'Detailed work history & education timeline',
       'Core skills & certifications list with badges',
