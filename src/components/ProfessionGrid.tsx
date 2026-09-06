@@ -61,7 +61,7 @@ export const ProfessionGrid: React.FC<ProfessionGridProps> = ({ onSelectProfessi
             <span>TAILORED FOR EVERY FIELD</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Built for Filipino workers and professionals — whatever your domain.
+            Built for workers and professionals — whatever your domain.
           </h2>
           <p className="text-gray-400 text-sm sm:text-base">
             Every career field requires a unique presentation. We customize layout sections, terminology, and evidence galleries to match your exact industry standard.
