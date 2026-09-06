@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} WorkFolio PH. All rights reserved. Built for Professionals worldwide.
           </div>
           <div className="flex items-center gap-1 text-gray-400">
-            <span>Design by -  MJ Revz</span>
+            <span>Designed by MJ Revz</span>
             <span>for Overseas & Local Workers</span>
           </div>
         </div>
