@@ -19,7 +19,7 @@ const STEPS = [
   {
     step: '03',
     title: 'We Build Your Site',
-    desc: 'Our design team formats your experience, builds your digital portfolio, formats your ATS CV, and sets up your domain.',
+    desc: 'Our design team formats your experience, builds your digital portfolio, formats your ATS CV, and connects your free subdomain or your own domain.',
     icon: Cpu
   },
   {
@@ -31,7 +31,7 @@ const STEPS = [
   {
     step: '05',
     title: 'Go Live',
-    desc: 'We launch your custom domain (yourname.com or .ph) with SSL security and professional email.',
+    desc: 'We launch you live — on your free subdomain or your own custom domain — with SSL security and professional email.',
     icon: Rocket
   },
   {
@@ -84,7 +84,7 @@ export const WorkflowSection: React.FC = () => {
             From your files to a live portfolio in 6 clear steps.
           </h2>
           <p className="text-gray-400 text-sm sm:text-base">
-            We handle all technical setup, domain registration, and mobile responsive design so you can focus on your job search.
+            We handle all technical setup, domain configuration & SSL, and mobile responsive design
           </p>
         </div>
 
