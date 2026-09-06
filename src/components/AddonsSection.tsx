@@ -43,7 +43,7 @@ export const AddonsSection: React.FC<AddonsSectionProps> = ({ onOpenInquiry }) =
             </div>
             <div className="pt-4 border-t border-emerald-900/40 flex items-center justify-between text-xs font-mono">
               <span className="text-gray-400">Add-on Price:</span>
-              <span className="text-emerald-400 font-bold text-sm">₱2,500</span>
+              <span className="text-emerald-400 font-bold text-sm">₱800</span>
             </div>
           </div>
 
