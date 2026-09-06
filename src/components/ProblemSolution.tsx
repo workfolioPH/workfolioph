@@ -81,7 +81,7 @@ export const ProblemSolution: React.FC<ProblemSolutionProps> = ({ onOpenInquiry 
             <ul className="space-y-4 text-xs sm:text-sm text-gray-200">
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Clean Custom Web Address:</strong> Share <code className="text-emerald-300 bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-800">yourname.workfolio.ph</code> or your own <code className="text-emerald-300 bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-800">.com</code> domain.</span>
+                <span><strong>Clean Custom Web Address:</strong> Share <code className="text-emerald-300 bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-800">yourname.pages.dev</code> or your own <code className="text-emerald-300 bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-800">.com</code> domain.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
