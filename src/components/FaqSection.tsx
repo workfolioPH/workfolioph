@@ -6,12 +6,17 @@ const INITIAL_FAQS: FaqItem[] = [
   {
     category: 'Domain & Hosting',
     question: 'Do I need my own domain name?',
-    answer: 'No! All packages include a free subdomain like yourname.workfolio.ph. If you choose the Professional or Premium package, we register a custom domain (.com or .ph) for you at no extra charge for the first year.'
+    answer: 'No. Every package — including Starter — is hosted on a free WorkFolio subdomain (e.g. yourname.workfolio.ph) that we maintain at zero cost, with no renewal fees, ever. If you would like a personal domain (e.g. juandelacruz.com), you buy and own it yourself at a registrar such as GoDaddy or Namecheap (typically ₱800–₱1,500/year, paid to the registrar, not to us). Our Professional and Premium packages include the complete setup: we configure and connect that domain to your portfolio for you.'
   },
   {
     category: 'Domain & Hosting',
     question: 'Who owns my custom domain name?',
-    answer: 'You own 100% of your domain. We register it under your contact details. If you ever want to transfer it to another host in the future, we provide full transfer EPP codes.'
+    answer: 'You do — 100%. We deliberately never buy or register domains on your behalf, exactly so the domain stays yours: you purchase it with your own account and details, and annual renewals are paid directly to your registrar (never to us). Our role is purely technical: we set up the DNS records that point your domain to your portfolio and secure it with SSL. If you ever move to another provider, you simply change those DNS records — no transfers, no EPP code drama, no lock-in.'
+  },
+  {
+    category: 'Domain & Hosting',
+    question: 'Can I start with the free subdomain and connect my own domain later?',
+    answer: 'Yes — that is exactly how most clients begin. Launch now on your free WorkFolio subdomain, and the day you decide to buy a personal domain, tell us and we will connect it to your existing portfolio. A free subdomain upgrade path never expires.'
   },
   {
     category: 'Payments',
