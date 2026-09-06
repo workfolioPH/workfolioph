@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenInquiry, onOpenAdmin, onOp
       {/* Top Banner */}
       <div className="bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-emerald-200 text-xs py-1.5 px-4 text-center font-medium flex items-center justify-center gap-2 border-b border-emerald-800/40">
         <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-        <span>🇵🇭 Digital Portfolios for Filipino Overseas & Local Professionals</span>
+        <span>🇵🇭 Digital Portfolios for Overseas & Local Professionals</span>
         <span className="hidden sm:inline-block text-emerald-400/60">•</span>
         <span className="hidden sm:inline font-semibold text-emerald-300">Turnaround in 2–5 Days</span>
       </div>
