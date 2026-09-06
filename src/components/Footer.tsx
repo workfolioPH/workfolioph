@@ -11,9 +11,7 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500 text-slate-950 font-black flex items-center justify-center text-sm">
-                WF
-              </div>
+              <img src="/images/logo.png" alt="WorkFolio PH logo" className="w-9 h-9 rounded-full object-cover" />
               <span className="text-white font-extrabold text-base">WorkFolio <span className="text-emerald-400">PH</span></span>
             </div>
             <p className="text-gray-400 leading-relaxed text-[11px]">
