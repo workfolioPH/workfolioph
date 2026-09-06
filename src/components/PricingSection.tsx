@@ -18,7 +18,7 @@ const PACKAGES = [
     subdomain: 'yourname.workfolio.ph',
     features: [
       'Single-page mobile-first responsive portfolio',
-      'Free subdomain (yourname.workfolio.ph)',
+      'Free subdomain (yourname.workfolio.ph) — no domain fees, ever',
       'Professional profile summary & contact buttons',
       'Detailed work history & education timeline',
       'Core skills & certifications list with badges',
@@ -33,19 +33,19 @@ const PACKAGES = [
     name: 'Professional',
     price: 6500,
     priceFormatted: '₱6,500',
-    tagline: 'Our most popular all-inclusive package with custom domain & email.',
+    tagline: 'Our most popular package — custom domain & email setup for the domain you own.',
     popular: true,
     turnaround: '3–5 Business Days',
     revisions: '3 Rounds of Revisions',
-    subdomain: 'yourname.com or .ph included (1 Year)',
+    subdomain: 'Bring your own .com/.ph — we connect it',
     features: [
       'Everything in Starter Package, PLUS:',
-      'Your Own Custom Domain (.com or .ph) for 1 Year',
+      'Custom Domain Setup & Connection (domain bought & owned by you)',
       'Custom Domain DNS configuration & SSL security',
       'Up to 25 workplace photos in high-res lightbox gallery',
       'Up to 5 embedded HD skill videos with custom thumbnails',
       'Professional ATS CV review & formatting polish',
-      'Custom Professional Email setup (contact@yourname.com)',
+      'Professional Email setup on your own domain (contact@yourname.com)',
       'Interactive certificate viewer modal',
       'Customized QR Code badge graphic asset for print'
     ]
@@ -58,7 +58,7 @@ const PACKAGES = [
     popular: false,
     turnaround: '4–6 Business Days',
     revisions: 'Unlimited Revisions',
-    subdomain: 'yourname.com / custom setup + 1 Year Updates',
+    subdomain: 'Your own domain, fully connected + 1 Year Updates',
     features: [
       'Everything in Professional Package, PLUS:',
       'Multi-section custom designed layout & animations',
