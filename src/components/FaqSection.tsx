@@ -19,6 +19,11 @@ const INITIAL_FAQS: FaqItem[] = [
     answer: 'Yes — that is exactly how most clients begin. Launch now on your free WorkFolio subdomain, and the day you decide to buy a personal domain, tell us and we will connect it to your existing portfolio. A free subdomain upgrade path never expires.'
   },
   {
+    category: 'General',
+    question: 'Is the design from your demos the design I will get?',
+    answer: 'Not exactly — and that is the point. The demos show the quality, structure and polish every portfolio gets, but your final design is tailored to you and your profession. You choose the look: favorite colors, example websites you like, or simply a description, and we design around that. Starter and Professional use our proven one-page layouts customized with your branding; Premium adds a fully custom multi-section design with animations. And if a draft is not to your taste, your revision rounds (2 / 3 / unlimited by package) are there to fix it.'
+  },
+  {
     category: 'Payments',
     question: 'What payment methods do you accept?',
     answer: 'We accept local Philippine payment methods including GCash, Maya, BDO, BPI Bank Transfer, and PayPal for international cards.'
