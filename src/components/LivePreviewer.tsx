@@ -81,6 +81,9 @@ export const LivePreviewer: React.FC<LivePreviewerProps> = ({ onOpenInquiry }) =
         <p className="text-gray-400 text-sm sm:text-base">
           These fictional demonstration profiles show how employers could view your credentials on phone and laptop.
         </p>
+        <div className="mx-auto max-w-2xl mt-2 bg-emerald-950/60 border border-emerald-800/60 rounded-xl px-4 py-3 text-[11px] sm:text-xs text-emerald-200 leading-relaxed">
+          <strong className="text-emerald-300">Please note:</strong> the samples show the <strong className="text-white">quality, structure &amp; polish</strong> every WorkFolio portfolio delivers — they are not fixed templates. Your final design is tailored to your profession, your taste and your branding: tell us the look you like (colors, example sites, or just a description) and we design around that. Layout depth follows the package — Starter &amp; Professional: clean proven one-page layouts customized with your branding; Premium: fully custom multi-section design with animations.
+        </div>
         </div>
 
         {/* Profession Selector Tabs */}
@@ -232,7 +235,7 @@ export const LivePreviewer: React.FC<LivePreviewerProps> = ({ onOpenInquiry }) =
                     onClick={() => onOpenInquiry('Professional')}
                     className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg"
                   >
-                    <span>Get A Portfolio Like This (₱6,500)</span>
+                    <span>Get Yours Tailored To You — ₱6,500</span>
                   </button>
                   <div className="text-xs text-emerald-300 flex items-center gap-1 font-mono">
                     <QrCode className="w-4 h-4 text-emerald-400" />
