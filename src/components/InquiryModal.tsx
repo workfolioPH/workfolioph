@@ -234,7 +234,7 @@ export const InquiryModal: React.FC<InquiryModalProps> = ({
               <label className="block text-xs font-medium text-gray-300 mb-1">Additional Notes / Questions</label>
               <textarea
                 rows={2}
-                placeholder="Tell us about your timeline, special files, or target overseas country..."
+                placeholder="Timeline, target country, special files — and your design taste: favorite colors or example sites you like..."
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 className="w-full bg-slate-900 border border-emerald-800/80 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-400"
