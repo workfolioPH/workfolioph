@@ -9,7 +9,7 @@ interface PricingCalculatorProps {
 
 const BASE_OPTIONS = [
   { id: 'Starter', name: 'Starter Package', price: 3500, desc: 'Single-page portfolio + free subdomain' },
-  { id: 'Professional', name: 'Professional Package', price: 6500, desc: 'Includes 1-yr custom domain (.com/.ph) + email' },
+  { id: 'Professional', name: 'Professional Package', price: 6500, desc: 'Custom domain & email setup (you own the domain)' },
   { id: 'Premium', name: 'Premium Package', price: 10500, desc: 'Multi-section + application suite + 1-yr updates' }
 ];
 
