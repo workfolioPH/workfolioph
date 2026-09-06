@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
             {/* Pill badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 text-xs font-medium shadow-inner">
               <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Built for Filipino Overseas & Local Professionals</span>
+              <span>Built for Overseas & Local Professionals</span>
               <span className="hidden sm:inline bg-emerald-800/50 text-emerald-200 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold">
                 From ₱3,500
               </span>
