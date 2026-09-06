@@ -19,7 +19,7 @@ const ADDON_OPTIONS = [
   { id: 'video-edit', name: 'Professional Skill Video Editing (3 clips)', price: 2500, desc: 'Trimming, audio boost, captions & TESDA badges' },
   { id: 'photo-grade', name: 'Workplace Photo Enhancement (15 photos)', price: 1500, desc: 'Color grading, lighting fix & background cleanup' },
   { id: 'linkedin-opt', name: 'LinkedIn Profile Optimization Guide', price: 500, desc: 'Profile summary, headline & banner graphic' },
-  { id: 'annual-care', name: '1-Year Annual Portfolio Maintenance', price: 1500, desc: 'Quarterly content updates & domain renewal care' }
+  { id: 'annual-care', name: '1-Year Annual Portfolio Maintenance', price: 1500, desc: 'Quarterly content updates & domain/DNS care (registrar fees not included)' }
 ];
 
 export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ isOpen, onClose, onOpenInquiryWithCustom }) => {
