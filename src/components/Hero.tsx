@@ -120,7 +120,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                 </div>
                 <div className="font-mono text-[10px] text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/50">
-                  maria-santos.workfolio.ph
+                  maria-santos.pages.dev
                 </div>
               </div>
 
