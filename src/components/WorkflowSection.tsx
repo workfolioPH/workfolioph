@@ -84,7 +84,7 @@ export const WorkflowSection: React.FC = () => {
             From your files to a live portfolio in 6 clear steps.
           </h2>
           <p className="text-gray-400 text-sm sm:text-base">
-            We handle all technical setup, domain configuration & SSL, and mobile responsive design
+            We handle all technical setup, domain configuration & SSL, and mobile responsive design so you can focus on your job search.
           </p>
         </div>
 
