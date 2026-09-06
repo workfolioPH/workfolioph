@@ -1,12 +1,12 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, ArrowRight, Play, FileText, QrCode, Star, Sparkles, Image } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowRight, Play, FileText, QrCode, Star, Sparkles, Image, ExternalLink } from 'lucide-react';
 
 interface HeroProps {
   onOpenInquiry: (pkg?: string) => void;
   onScrollTo: (id: string) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenInquiry }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#0B100D] via-[#0E1712] to-[#0B100D] text-white pt-8 pb-16 md:pt-16 md:pb-24 border-b border-emerald-900/30">
       {/* Background Glow Accents */}
@@ -79,13 +79,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenInquiry, onScrollTo }) => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <button
-                onClick={() => onScrollTo('preview')}
+              <a
+                href="https://jdc-sample-portfolio.pages.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-4 text-sm font-semibold rounded-xl bg-emerald-950/80 hover:bg-emerald-900/80 border border-emerald-800/80 text-emerald-200 transition-all flex items-center justify-center gap-2"
               >
-                <Play className="w-4 h-4 text-emerald-400 fill-emerald-400" />
-                <span>See Live Portfolio Demos</span>
-              </button>
+                <ExternalLink className="w-4 h-4 text-emerald-400" />
+                <span>See Live Portfolio Demo</span>
+              </a>
             </div>
 
             {/* Trust Micro Footer */}
