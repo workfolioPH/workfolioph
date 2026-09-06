@@ -34,11 +34,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenInquiry, onOpenAdmin, onOp
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 p-0.5 shadow-lg shadow-emerald-900/40 group-hover:scale-105 transition-transform">
-            <div className="w-full h-full bg-[#0B100D] rounded-[10px] flex items-center justify-center font-black text-emerald-400 text-xl tracking-tight">
-              WF
-            </div>
-          </div>
+          <img
+            src="/images/logo.png"
+            alt="WorkFolio PH logo"
+            className="w-11 h-11 rounded-full object-cover shadow-lg shadow-emerald-900/40 transition-transform group-hover:scale-105"
+          />
           <div>
             <div className="font-extrabold text-lg tracking-tight text-white flex items-center gap-1.5">
               WorkFolio <span className="text-emerald-400">PH</span>
