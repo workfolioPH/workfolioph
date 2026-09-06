@@ -76,12 +76,11 @@ export const Footer: React.FC = () => {
 
         <div className="pt-6 border-t border-emerald-900/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]">
           <div>
-            © {new Date().getFullYear()} WorkFolio PH. All rights reserved. Built for Filipino Professionals worldwide.
+            © {new Date().getFullYear()} WorkFolio PH. All rights reserved. Built for Professionals worldwide.
           </div>
           <div className="flex items-center gap-1 text-gray-400">
-            <span>Designed with</span>
-            <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" />
-            <span>for Overseas & Local Filipino Workers</span>
+            <span>by MJ Revz for Overseas & Local Workers</span>
+            <span>for Overseas & Local Workers</span>
           </div>
         </div>
 
