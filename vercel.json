@@ -1,1 +1,10 @@
-{}
+{
+  "functions": {
+    "api/inquiries.js": {
+      "includeFiles": "shared/**"
+    },
+    "api/catalog.js": {
+      "includeFiles": "shared/**"
+    }
+  }
+}
