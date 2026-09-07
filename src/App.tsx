@@ -13,31 +13,33 @@ import { FaqSection } from './components/FaqSection';
 import { InquiryModal } from './components/InquiryModal';
 import { AdminPortal } from './components/AdminPortal';
 import { Footer } from './components/Footer';
+import { quoteFromSelection, resolveAddonIds, resolvePackageId } from './lib/catalog';
 
 export function App() {
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
   const [adminModalOpen, setAdminModalOpen] = useState(false);
   const [calculatorModalOpen, setCalculatorModalOpen] = useState(false);
-  
-  const [selectedPackage, setSelectedPackage] = useState('Professional');
+
+  const [selectedPackage, setSelectedPackage] = useState('professional');
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [calculatedPrice, setCalculatedPrice] = useState(6500);
 
   const handleOpenInquiry = (packageName?: string) => {
-    if (packageName) setSelectedPackage(packageName);
+    const packageId = resolvePackageId(packageName) || 'professional';
+    setSelectedPackage(packageId);
     setSelectedAddons([]);
-    if (packageName === 'Starter') setCalculatedPrice(3500);
-    else if (packageName === 'Professional') setCalculatedPrice(6500);
-    else if (packageName === 'Premium') setCalculatedPrice(10500);
-    else setCalculatedPrice(6500);
-
+    const quote = quoteFromSelection(packageId, []);
+    setCalculatedPrice(quote ? quote.total_price : 6500);
     setInquiryModalOpen(true);
   };
 
-  const handleOpenInquiryWithCustom = (packageName: string, addons: string[], price: number) => {
-    setSelectedPackage(packageName);
-    setSelectedAddons(addons);
-    setCalculatedPrice(price);
+  const handleOpenInquiryWithCustom = (packageName: string, addons: string[]) => {
+    const packageId = resolvePackageId(packageName) || 'professional';
+    const addonIds = resolveAddonIds(addons) || [];
+    const quote = quoteFromSelection(packageId, addonIds);
+    setSelectedPackage(packageId);
+    setSelectedAddons(addonIds);
+    setCalculatedPrice(quote ? quote.total_price : 6500);
     setInquiryModalOpen(true);
   };
 
