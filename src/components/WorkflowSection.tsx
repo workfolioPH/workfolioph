@@ -145,3 +145,42 @@ export const WorkflowSection: React.FC = () => {
             <a
               href="https://wa.me/639918720311?text=Hi%20WorkFolio%20PH!%20I%20want%20to%20update%20my%20order%20(reference%20code%20below):%20"
               target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 font-semibold hover:underline"
+            >
+              message us on WhatsApp with your code
+            </a>
+            .
+          </p>
+
+          {trackerError && (
+            <div className="p-3 rounded-xl bg-red-950/60 border border-red-800/60 text-red-200 text-xs flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+              <span>{trackerError}</span>
+            </div>
+          )}
+
+          {trackerResult && (
+            <div className="p-4 rounded-xl bg-slate-900 border border-emerald-600/60 text-xs space-y-3">
+              <div className="flex items-center justify-between border-b border-emerald-900/50 pb-2">
+                <span className="font-bold text-white text-sm">Order status</span>
+                <span className="font-mono text-emerald-400 font-bold">{trackerResult.ref_code}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 text-gray-300">
+                <div>Package: <strong className="text-white">{trackerResult.package_name}</strong></div>
+                <div>Status: <span className="text-xs font-bold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">{trackerResult.status}</span></div>
+                {trackerResult.created_at && (
+                  <div className="col-span-2">Received: <strong className="text-white">{new Date(trackerResult.created_at).toLocaleDateString()}</strong></div>
+                )}
+              </div>
+              <p className="text-[11px] text-gray-400 pt-1">
+                Need to update assets or ask questions? Message us on WhatsApp with reference <strong>{trackerResult.ref_code}</strong>.
+              </p>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </section>
+  );
+};
