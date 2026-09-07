@@ -42,8 +42,7 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ isOpen, on
   const grandTotal = baseObj.price + addonsTotal;
 
   const handleOrder = () => {
-    const addonNames = selectedAddons.map(id => ADDON_OPTIONS.find(a => a.id === id)?.name || id);
-    onOpenInquiryWithCustom(baseObj.name, addonNames, grandTotal);
+    onOpenInquiryWithCustom(baseObj.id, selectedAddons, grandTotal);
   };
 
   if (!isOpen) return null;
