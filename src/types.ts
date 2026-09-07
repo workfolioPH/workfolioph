@@ -1,3 +1,9 @@
+export interface SelectedAddon {
+  id: string;
+  name: string;
+  price: number;
+}
+
 export interface Inquiry {
   id?: number;
   ref_code: string;
@@ -7,11 +13,18 @@ export interface Inquiry {
   contact_method: 'WhatsApp' | 'Viber' | 'Email' | 'Phone';
   profession: string;
   package_name: string;
-  selected_addons: string[];
+  selected_addons: Array<string | SelectedAddon>;
   total_price: number;
   custom_domain?: string;
   notes?: string;
   status: 'New' | 'Assets Received' | 'In Progress' | 'Reviewing' | 'Live' | 'Completed';
+  created_at?: string;
+}
+
+export interface TrackerStatus {
+  ref_code: string;
+  package_name: string;
+  status: Inquiry['status'];
   created_at?: string;
 }
 
